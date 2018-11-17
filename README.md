@@ -6,24 +6,32 @@ A tiny project which introduces a new way to create and use markdown extensions 
 
 * PHP 7.1
 
+## Installation
+
+It's a composer installation away!
+
+```
+composer require nessworthy/parsedown-extension-manager
+```
+
 ## Why?
 
 Each extension added to Parsedown must be done by extending it, registering the extension in a few places, and adding
 1-3 new methods in the extended class.
 
-This implementation doesn't respect SOLID principles as well as it could. In addition, your extended Parsedown class
-may start looking rather large after a few additional extensions!
+After adding in a few extensions the original way, I grew a little frustrated at how "vertical" the markdown
+class was becoming. 
 
-So, I changed the way Parsedown can register new extensions.
+So, I decided to change the way extensions could be registered.
 
 ## What's new?
 
 Extensions can be represented as concrete classes of one of two interfaces: `ParsedownBlockExtension`, or `ParsedownInlineExtension`.
 
-Each extension is then separately instantiated and registered to your `\Nessworthy\Parsedown` instance by using the added
+Each extension is then separately instantiated and registered to your `Nessworthy\ParsedownExtensionManager\Parsedown` instance by using the added
 `registerBlockExtension` or `registerInlineExtension` and passing your extension through.
 
-Parsedown will use your extensions in the same way as it normally would, with the benefit of each extension being isolated
+Parsedown will use your extensions in the same way as it normally would with the benefit of each extension being isolated
 and separately extendable!
 
 ## Usage Example
