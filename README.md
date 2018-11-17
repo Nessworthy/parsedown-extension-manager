@@ -115,6 +115,29 @@ this library instead!
 If you fancy creating and sharing extensions of your own, feel free to use the `nessworthy\parsedown-extension` 
 metapackage instead which only contains the interfaces you need to implement.
 
+## Extension Docs
+
+I won't go into detail on how to write Parsedown Extensions here - the [parsedown documentation][4] does a good job
+of explaining what you need to do to add markdown extensions. The returned data from your methods should still be
+the same as if you had just extended markdown in the original way.
+
+### `ParsedownInlineExtension`
+
+Inline extensions require two methods:
+* `getStartingCharacter(): string` - Expects you return a single character which tells Parsedown to start using
+your extension when it's found in the markdown body.
+* `run(array $excerpt): ?array` - The equivalent of Parsedown's `inlineYourExtension($excerpt)` extension method.
+
+### `ParsedownBlockExtension`
+
+Block extensions *always* require the following four methods:
+
+* `getStartingCharacter(): string` - Expects you return a single character which tells Parsedown to start using your 
+extension when it's found in the markdown body.
+* `start($line, array $block = null): ?array` - The equivalent of Parsedown's `blockYourExtension($line, $block)` method.
+* `continue($line, array $block): ?array` - The equivalent of Parsedown's `blockYourExtensionContinue($line, $block)` method.
+* `complete(array $block): ?array` - The equivalent of Parsedown's `blockYourExtensionComplete($block)` method. 
+
 ## What's next?
 
 * More accurate written tests! (e.g. to account for pre-registered inline special characters and not yet registered ones)
@@ -122,3 +145,4 @@ metapackage instead which only contains the interfaces you need to implement.
 [1]:https://github.com/erusev/parsedown/
 [2]:https://github.com/Nessworthy/parsedown-extension/blob/master/src/ParsedownInlineExtension.php
 [3]:https://github.com/Nessworthy/parsedown-extension/blob/master/src/ParsedownBlockExtension.php
+[4]:https://github.com/erusev/parsedown/wiki/Tutorial:-Create-Extensions#add-inline-element
