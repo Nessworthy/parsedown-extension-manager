@@ -1,0 +1,33 @@
+{
+  "name": "nessworthy/parsedown-extension-manager",
+  "description": "Allows extending Parsedown in a more SOLID way.",
+  "minimum-stability": "stable",
+  "license": "WTFPL",
+  "authors": [
+    {
+      "name": "Sean Nessworthy",
+      "version": "1.0.0",
+      "email": "sean@nessworthy.me"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "roave/security-advisories": "dev-master",
+    "erusev/parsedown": "1.7.1",
+    "nessworthy/parsedown-extension": "1.0.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "phpunit/phpunit": "7.4.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nessworthy\\ParsedownExtensionManager\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Nessworthy\\ParsedownExtensionManager\\Tests\\": "tests/"
+    }
+  }
+}
