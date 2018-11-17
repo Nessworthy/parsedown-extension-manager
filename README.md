@@ -58,7 +58,7 @@ class ExampleInlineExtension implements \Nessworthy\ParsedownExtensionManager\Pa
         return '{';
     }
     
-    public function run(Parsedown $instance, array $excerpt): ?array
+    public function run(array $excerpt): ?array
     {
         if (preg_match('/^{c:([#\w]\w+)}(.*?){\/c}/', $excerpt['text'], $matches)) {
             return [
