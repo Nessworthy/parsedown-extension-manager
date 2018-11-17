@@ -1,12 +1,12 @@
 {
   "name": "nessworthy/parsedown-extension-manager",
-  "description": "Allows extending Parsedown in a more SOLID way.",
+  "description": "Extend Parsedown in a more SOLID way.",
   "minimum-stability": "stable",
   "license": "WTFPL",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Sean Nessworthy",
-      "version": "1.0.0",
       "email": "sean@nessworthy.me"
     }
   ],
