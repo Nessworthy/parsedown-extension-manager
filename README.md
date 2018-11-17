@@ -30,8 +30,8 @@ and separately extendable!
 
 ### Step 1: Create your Extension!
 
-Extensions can either implement `\Nessworthy\ParsedownExtensionManager\ParsedownInlineExtension` or
-`\Nessworthy\ParsedownExtensionManager\ParsedownBlockExtension`. Both expect methods which mirror closely to how you would
+Extensions can either implement [`\Nessworthy\ParsedownExtensionManager\ParsedownInlineExtension`][2] or
+[`\Nessworthy\ParsedownExtensionManager\ParsedownBlockExtension`][3]. Both expect methods which mirror closely to how you would
 add extensions normally.
 
 ```php
@@ -99,7 +99,7 @@ Ignorance aside, this library does leverage `__call` and tries to do so
 as sanely as possible.
 
 In addition, because this is _yet another_ extension of Parsedown, it won't work out of the box with any of the other
-Parsedown libraries out there. However, it's possible to simply convert other Parsedown extensions to work with
+Parsedown extensions out there. However, it's possible to simply convert other Parsedown extensions to work with
 this library instead!
 
 ## Distributing Extensions
@@ -112,3 +112,5 @@ metapackage instead which only contains the interfaces you need to implement.
 * More accurate written tests! (e.g. to account for pre-registered inline special characters and not yet registered ones)
 
 [1]:https://github.com/erusev/parsedown/
+[2]:https://github.com/Nessworthy/parsedown-extension/blob/master/src/ParsedownInlineExtension.php
+[3]:https://github.com/Nessworthy/parsedown-extension/blob/master/src/ParsedownBlockExtension.php
