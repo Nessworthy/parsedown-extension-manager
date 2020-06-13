@@ -3,7 +3,7 @@
   "description": "Extend Parsedown in a more SOLID way.",
   "minimum-stability": "stable",
   "license": "WTFPL",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "authors": [
     {
       "name": "Sean Nessworthy",
@@ -12,8 +12,7 @@
   ],
   "require": {
     "php": ">=7.1",
-    "roave/security-advisories": "dev-master",
-    "erusev/parsedown": "1.7.1",
+    "erusev/parsedown": "^1.7",
     "nessworthy/parsedown-extension": "1.0.0"
   },
   "require-dev": {
