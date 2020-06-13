@@ -3,7 +3,7 @@
   "description": "Extend Parsedown in a more SOLID way.",
   "minimum-stability": "stable",
   "license": "WTFPL",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "authors": [
     {
       "name": "Sean Nessworthy",
